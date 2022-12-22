@@ -1,8 +1,8 @@
 ﻿using System;
-using Sarosi_Lucian_Lab7;
 using System.IO;
 using Sarosi_Lucian_Lab7.Data;
 
+namespace Sarosi_Lucian_Lab7;
 public partial class App : Application
 {
     static ShoppingListDatabase database;
