@@ -50,7 +50,15 @@ namespace Sarosi_Lucian_Lab7.Data
                 + " on P.ID = LP.ProductID where LP.ShopListID = ?",
                 shoplistid);
         }
+        public Task<ShopList> GetShopListAsync(int id)
+        {
+            return _database.Table<ShopList>().Where(i => i.ID == id)
+                .FirstOrDefaultAsync();
 
-
+        }
+        public Task<int> DeleteShopListAsync(ShopList slist)
+        {
+            return _database.DeleteAsync(slist);
+        }
     }
 }
