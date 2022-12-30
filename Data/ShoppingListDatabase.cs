@@ -55,6 +55,7 @@ namespace Sarosi_Lucian_Lab7.Data
             return _database.Table<ShopList>().Where(i => i.ID == id)
                 .FirstOrDefaultAsync();
 
+
         }
         public Task<int> DeleteShopListAsync(ShopList slist)
         {
