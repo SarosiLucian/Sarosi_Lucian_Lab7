@@ -1,4 +1,5 @@
-namespace Sarosi_Lucian_Lab7.Models;
+using Sarosi_Lucian_Lab7.Models;
+namespace Sarosi_Lucian_Lab7;
 
 
 public partial class ListPage : ContentPage
