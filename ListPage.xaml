@@ -4,7 +4,9 @@
              x:Class="Sarosi_Lucian_Lab7.ListPage"
              Title="ListPage">
     <StackLayout Margin="20">
-        <Editor Placeholder="Enter the description of the shopping list" Text="{Binding Description}" HeightRequest="100" />
+        <Editor Placeholder="Enter the description of the shopping list" 
+                Text="{Binding Description}" 
+                HeightRequest="100" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

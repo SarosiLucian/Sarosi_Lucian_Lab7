@@ -19,7 +19,9 @@ namespace Sarosi_Lucian_Lab7.Data
         }
         public Task<ShopList> GetShopListAsync(int id)
         {
-            return _database.Table<ShopList>().Where(i => i.ID == id).FirstOrDefaultAsync();
+            return _database.Table<ShopList>()
+                .Where(i => i.ID == id)
+                .FirstOrDefaultAsync();
         }
         public Task<int> SaveShopListAsync(ShopList slist)
         {
