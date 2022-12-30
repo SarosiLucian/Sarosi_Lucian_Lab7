@@ -16,9 +16,17 @@ public partial class ShopPage : ContentPage
 		await Navigation.PopAsync(); 
 	}
 
+    async void OnDeleteButtonClicked(object sender, EventArgs e)
+    {
+        var shop = (Shop)BindingContext;
+        await App.Database.DeleteProductAsync(shop);
+        await Navigation.PopAsync();
+    }
+
     async void OnShowMapButtonClicked(object sender, EventArgs e)
     {
-        var shop = (Shop)BindingContext; var address = shop.Adress; 
+        var shop = (Shop)BindingContext; 
+        var address = shop.Adress; 
 		var locations = await Geocoding.GetLocationsAsync(address);
 
         var options = new MapLaunchOptions { Name = "Magazinul meu preferat" };
@@ -42,10 +50,5 @@ public partial class ShopPage : ContentPage
         }
         await Map.OpenAsync(location, options);
 
-        async void OnDeleteButtonClicked(object sender, EventArgs e) 
-        { 
-            var product = (Product)BindingContext; 
-            await App.Database.DeleteProductAsync(product); 
-        }
     }
 }
